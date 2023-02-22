@@ -1,16 +1,14 @@
 import ToDoListItem from "./todo-list-item";
 
-const getTodos = async () => {
-    let todos = await fetch("https://todo-api-five-pearl.vercel.app/api/todo/list");
-    return todos.json();
-}
 type Todo = {
     id: string;
     name: string;
     isDone: boolean;
 };
-export default async function ToDoList() {
-    const { todos } = await getTodos();
+export default function ToDoList({ todos }:
+    {
+        todos: Todo[]
+    }) {
     return (
         <div className="flex justify-center bg-stone-100 p-2 rounded-lg m-5">
             <div className="w-full">
@@ -24,10 +22,12 @@ export default async function ToDoList() {
                                             <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                                 #
                                             </th>
-                                            <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                            <th scope="col"
+                                                className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                                 Task
                                             </th>
-                                            <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                            <th scope="col"
+                                                className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                                 Action
                                             </th>
                                         </tr>

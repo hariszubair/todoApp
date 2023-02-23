@@ -19,7 +19,7 @@ export default function AddNewToDo() {
         <>
             <div className="flex justify-end">
                 <div className="flex w-1/4">
-                    <input type="text"
+                    <input type="text" placeholder="Add a task"
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={name} onChange={(e) => setName(e.target.value)} />
                     <button

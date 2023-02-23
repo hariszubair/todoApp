@@ -36,6 +36,7 @@ export default function ToDoList({ todos }: {
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         {todos.map((list: Todo, index: number) => {
                                             return (
                                                 <tr className={index % 2 == 0 ? 'bg-gray-100 border-b' : 'bg-white border-b'}>
@@ -43,6 +44,13 @@ export default function ToDoList({ todos }: {
                                                 </tr>
                                             );
                                         })}
+                                        {todos.length == 0 &&
+
+                                            <tr className='bg-gray-100 border-b'>
+                                                <td colSpan={3} className='text-center'>No task in the list</td>
+                                            </tr>
+
+                                        }
                                     </tbody>
                                 </table>
                             </div>

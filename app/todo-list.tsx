@@ -5,10 +5,15 @@ type Todo = {
     name: string;
     isDone: boolean;
 };
-export default function ToDoList({ todos }:
-    {
-        todos: Todo[]
-    }) {
+
+export default function ToDoList({ todos }: {
+    todos: {
+        id: string;
+        name: string;
+        isDone: boolean;
+    }[]
+}) {
+
     return (
         <div className="flex justify-center bg-stone-100 p-2 rounded-lg m-5">
             <div className="w-full">
@@ -22,12 +27,10 @@ export default function ToDoList({ todos }:
                                             <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                                 #
                                             </th>
-                                            <th scope="col"
-                                                className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                            <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                                 Task
                                             </th>
-                                            <th scope="col"
-                                                className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                            <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                                 Action
                                             </th>
                                         </tr>

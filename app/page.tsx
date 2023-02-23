@@ -1,7 +1,8 @@
 import AddNewToDo from "./add-new-todo";
 import ToDoList from "./todo-list";
+
 const getTodos = async () => {
-  let todos = await fetch("https://todo-api-five-pearl.vercel.app/api/todo/list");
+  let todos = await fetch("https://todo-api-five-pearl.vercel.app/api/todo/list", { cache: 'no-store' });
   return todos.json();
 }
 type Todo = {
@@ -9,9 +10,11 @@ type Todo = {
   name: string;
   isDone: boolean;
 };
+
+
+
 export default async function Home() {
   const { todos } = await getTodos();
-
   return (
     <>
       <div className="text-center">
